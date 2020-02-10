@@ -19,49 +19,49 @@ Open the OpenShift Console from the IBM Cloud OpenShift dashboard.
 
 Create a new project 'workshop'.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiG6sKX1GLkNnwsKGD_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiG6sKX1GLkNnwsKGD_image.png)
 
 ### Step 3
 
 Open the new project.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGArv8XAobekyajGc_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGArv8XAobekyajGc_image.png)
 
 ### Step 4
 
 Click 'Add to Project', followed by 'Deploy Image' in the pop up menu and then 'Deploy Image' in the dialog.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGF9_KJN2mKkBlNku_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGF9_KJN2mKkBlNku_image.png)
 
 ### Step 5
 
 Enter 'nheidloff/authors:v1' as the image name, click the search icon and then the 'Deploy' button.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGIGDIs2-4z0I2z0H_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGIGDIs2-4z0I2z0H_image.png)
 
 ### Step 6
 
 Navigate back to the overview page.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGMj6Saqb-9Gm7uy__image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGMj6Saqb-9Gm7uy__image.png)
 
 ### Step 7
 
 Click 'Create Route'.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGPdbdT1F2RjVG_eK_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGPdbdT1F2RjVG_eK_image.png)
 
 ### Step 8
 
 Click the 'Create' button (not shown in the screenshot).
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGSVIhmj0Kn3iuPoC_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGSVIhmj0Kn3iuPoC_image.png)
 
 ### Step 9
 
 Copy the URL and append '/openapi/ui'.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGVIO2z7C4sIM2eDq_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGVIO2z7C4sIM2eDq_image.png)
 
 {% hint style="info" %}
 add /openapi/ui to the end of the URL
