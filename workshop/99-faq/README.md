@@ -2,11 +2,11 @@
 
 This page would list all know questions and potential problems, with possible answers or remedies.
 
-## Log in to IBM Cloud
+### Log in to IBM Cloud
 
 If you have created an IBM Cloud account before as Pay-as-You-Go account, you might need to create a new account.
 
-## You can't create a new account
+### I can't create a new account
 
 Ask for whitelisting, or use your own smartphone with a data plan (do not use local WiFi <!-- a rationale here would probably be helpful -->).
 
