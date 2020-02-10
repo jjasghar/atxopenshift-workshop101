@@ -15,9 +15,9 @@ The following section describes how to install Minishift and the required depend
 
 These are the basic steps for setting up Minishift on your personal system:
 
-- ​Configure the virtualization environment
-- ​Download and install Minishift
-- ​Start the OpenShift Server
+- [Configure the virtualization environment](https://github.com/IBM/minishift101/blob/master/workshop/#configure-the-virtualization-environment)
+- [Download and install Minishift](https://github.com/IBM/minishift101/blob/master/workshop/#download-and-install-minishift)
+- [Start the OpenShift Server](https://github.com/IBM/minishift101/blob/master/workshop/#start-the-openshift-server)
 
 The setup procedure should be run as a regular user with permission to launch virtual machines. In the procedure, you will see how to assign that permission, along with ways to configure your hypervisor and command shell to start and effectively interact with Minishift.
 
@@ -72,4 +72,4 @@ Both your console address and your pid will be different.
 
 ## Further cluster configurations
 
-After setting up your cluster, you may have specific requirements that you want to enforce in your cluster. The minishift tool allows you to manage the lifecycle of the single-node OpenShift cluster as well as set environment variables, persistent storage and proxy options if your machine is behind a proxy. For more information on these configurations, see the following link. <!-- link needed -->
+After setting up your cluster, you may have specific requirements that you want to enforce in your cluster. The minishift tool allows you to manage the lifecycle of the single-node OpenShift cluster as well as set environment variables, persistent storage and proxy options if your machine is behind a proxy. For more information on these configurations, see the following [link](https://docs.okd.io/latest/minishift/using/basic-usage.html#runtime-options).
