@@ -182,9 +182,9 @@ The following gif is an animation of the simplified steps above in a sequence.
 
 ### Steps
 
-Step 1 - creating and pushing image to the internal registry
+#### Step 1 - creating and pushing image to the internal registry
 
-### Create an Open Shift project
+##### Create an Open Shift project
 
 We need an OpenShift project, this is simply put equivalent to a Kubernetes namespace plus OpenShift security. Let us create one.
 
@@ -197,7 +197,7 @@ $ oc new-project cloud-native-starter
 
 Make sure you are logged on to your OpenShift cluster. See here.
 
-### Build and save the container image in the Open Shift Container Registry
+##### Build and save the container image in the Open Shift Container Registry
 
 Now we want to build and save a container image in the OpenShift Container Registry. We use these commands to do that:
 
@@ -241,9 +241,9 @@ Verify the container image in the Open Shift Container Registry UI
 
 ![You should find the project you just pushed](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiDXsgrfeJba1zTpo5_image.png)
 
-### 2. Creating deployment and a service
+#### 2. Creating deployment and a service
 
-#### Apply the deployment.yaml
+##### Apply the deployment.yaml
 
 This deployment will deploy a container to a Pod in Kubernetes. For more details we use the Kubernetes documentation for Pods.
 
