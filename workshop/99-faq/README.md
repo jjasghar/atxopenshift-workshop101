@@ -1,5 +1,7 @@
 # FAQ
 
+This page would list all know questions and potential problems, with possible answers or remedies.
+
 ## Log in to IBM Cloud
 
 If you have created an IBM Cloud account before as Pay-as-You-Go account, you might need to create a new account.
