@@ -2,10 +2,10 @@
 
 This is a description of the Lab 3
 
-Lab 2 consits of two parts:
+Lab 3 consits of two parts:
 
 - Setting up the environment for Lab 3
-- Executing a Lab 3 - creating a Red Hat OpenShift project
+- Creating a Red Hat OpenShift project
 
 Below please find the architecture of the project.
 
@@ -17,12 +17,13 @@ During this Lab you will use recently created project and deploy it to your clus
 
 ### Tools
 
-Find the option for tools the most suitable for you
-Prebuilding an Image with local Code
+Find the option for the tools most suitable for you
+
+#### Prebuilding an Image with local Code
 
 There is an image on DockerHub with all required tools. In order to use local IDEs and editors to modify code and configuraton files a Docker volume is used. This option works only for Mac and Linux.
 
-### Step 1: Run these commands in a terminal
+#### Step 1: Run these commands in a terminal
 
 ```bash
 $ git clone https://github.com/IBM/openshift-on-ibm-cloud-workshops.git
@@ -31,7 +32,7 @@ $ ROOT_FOLDER=$(pwd)
 $ docker run -v $ROOT_FOLDER/:/cloud-native-starter -it --rm nheidloff/openshift-workshop-tools:v1
 ```
 
-### Step 2: Inside your running Docker image you can access your the local project
+#### Step 2: Inside your running Docker image you can access your the local project
 
 You should see the prompt like this `root@3f46c41f7303:/usr/local/bin#`, now run the following instructions:
 
@@ -43,9 +44,9 @@ $ ROOT_FOLDER=$(pwd)
 
 Note: With the `--rm` option in the docker run command the container is deleted once you exit. This is intended.
 
-### Step 3: Move on with Verify Access to OpenShift on the IBM Cloud
+#### Step 3: Move on with Verify Access to OpenShift on the IBM Cloud
 
-#### Option 1
+##### Option 1
 
 (prefered for Windows): Prebuilt Image with Code in Container There is an image on DockerHub with all required tools. This option works for Mac, Linux and Windows. To get started as quickly as possible, use this image.
 
