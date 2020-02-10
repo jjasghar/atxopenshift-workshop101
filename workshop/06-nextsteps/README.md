@@ -15,9 +15,9 @@ The following section describes how to install Minishift and the required depend
 
 These are the basic steps for setting up Minishift on your personal system:
 
-- ​Configure the virtualization environment
-- ​Download and install Minishift
-- ​Start the OpenShift Server
+- [Configure the virtualization environment](https://github.com/IBM/minishift101/blob/master/workshop/#configure-the-virtualization-environment)
+- [Download and install Minishift](https://github.com/IBM/minishift101/blob/master/workshop/#download-and-install-minishift)
+- [Start the OpenShift Server](https://github.com/IBM/minishift101/blob/master/workshop/#start-the-openshift-server)
 
 The setup procedure should be run as a regular user with permission to launch virtual machines. In the procedure, you will see how to assign that permission, along with ways to configure your hypervisor and command shell to start and effectively interact with Minishift.
 
@@ -26,7 +26,7 @@ The setup procedure should be run as a regular user with permission to launch vi
 Minishift can be installed on Windows, Linux and Mac but depending on your platform, you will need to configure a compatible hypervisor in order for the OpenShift cluster to be created within the virtualised environment. Verify that the hypervisor of your choice is installed and enabled on your system before you set up Minishift. Once the hypervisor is up and running, additional setup is required for Minishift to work with that hypervisor.
 
 See the appropriate section for your hypervisor and operating system:
-*F or Linux, [set up the KVM driver](https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html#setting-up-kvm-driver]
+* For Linux, [set up the KVM driver](https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html#setting-up-kvm-driver)
 * For macOS, [set up the hyperkit driver](https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html#setting-up-hyperkit-driver)
 * For Windows, [set up the Hyper-V driver](https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html#setting-up-hyperkit-driver)
 * For VirtualBox (all platforms), [set up Minishift to use VirtualBox](https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html#setting-up-virtualbox-driver)
@@ -64,4 +64,4 @@ To login as administrator:
 
 ## Further cluster configurations
 
-After setting up your cluster, you may have specific requirements that you want to enforce in your cluster. The minishift tool allows you to manage the lifecycle of the single-node OpenShift cluster as well as set environment variables, persistent storage and proxy options if your machine is behind a proxy. For more information on these configurations, see the following link.
+After setting up your cluster, you may have specific requirements that you want to enforce in your cluster. The minishift tool allows you to manage the lifecycle of the single-node OpenShift cluster as well as set environment variables, persistent storage and proxy options if your machine is behind a proxy. For more information on these configurations, see the following [link](https://docs.okd.io/latest/minishift/using/basic-usage.html#runtime-options).
