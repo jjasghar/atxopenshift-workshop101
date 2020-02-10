@@ -1,4 +1,4 @@
-# Lab 1 - Start with a Docker Image
+# Lab 1 - Using Docker Images
 This Lab will help you understand basics of Docker technology, you will build, ship, and run a container image.
 
 This workshop is an introduction to Docker, which is a runtime for containers. You will create a containerized Node.js application that provides a service to translate phrases from one language to another. The application uses the IBM Watson in IBM Language Translation service.‌
@@ -22,7 +22,8 @@ Starting such an image is much faster omitting start of an OS. In addition the i
 The following steps would allow you to create the Watson translation service in the cloud. You will record the API Key to access your service later. You will create a node.js based microservice. This microservice will respond to requests with results of the translations coming from IBM Watson service. As soon as you are ready with the microservice you will be able to start Build - Ship - Run containerization process. You will build an image, and push it to a public repository - Docker Hub, and run the containerized microservice.
 
 ![The Docker is about Building-Shipping-Running containers](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Ltht0_vGCm5brrUQOK2_-Lthvuq8uvz3mrYS5g_n_image.png)
-### Step 1 - create a language translation service
+
+### Step 1 - Create a language translation service
 
 ‌Open your IBM Cloud dashboard using your IBM Cloud account with this URL: https://cloud.ibm.com
 
@@ -38,7 +39,7 @@ Click on the service to create a new instance. Pick the Lite **free of charge** 
 
 You will be redirected to the service landing page.
 
-### Step 2 - copy the credentials to be used later
+### Step 2 - Copy the credentials to be used later
 
 Click on Service Credentials on the left bar.
 
@@ -48,7 +49,7 @@ If you do not see a credential provided for you, you can create a new set of cre
 
 **Congratulations!** You created your first Language Translator service. The next steps will show you how to build a Docker container for a Node.js application that provides an end point to translate text!
 
-### Step 3 - clone repository
+### Step 3 - Clone a demo repository
 
 Open your local terminal or the web terminal provided in the workshop and change to the /data directory.
 
@@ -58,7 +59,7 @@ cd data
 git clone https://github.com/lidderupk/nodejs-docker.git
 ```
 
-### Step 4 - build the docker image
+### Step 4 - Build a docker image
 
 Change into the directory you just cloned and build the docker image
 
@@ -105,7 +106,7 @@ CMD [ "node", "server.js" ]
 
 ... starts the application by running node server.js.
 
-### Step 5 - run the docker image
+### Step 5 - Run the docker image
 
 ```bash
 docker run -p 8080:8080 -e "nlp_key=<api_key>" -d <docker-username>/node-container
@@ -117,7 +118,7 @@ In my case, I would run
 docker run -p 8080:8080 -e "nlp_key=T1ReDZISYE4cpqQnQHKTWe1F9iUy6hhxkRu0aWqzmxQ3" -d upkar/node-container
 ```
 
-### Step 6 - test the application
+### Step 6 - Test the application
 
 ```bash
 curl "localhost:8080/translate?text=how%20are%20you"
@@ -157,7 +158,7 @@ You should now see the same text translated to German:
 }
 ```
 
-Another example ...
+Another example...
 
 ```bash
 curl "localhost:8080/translate?text=People+are+suffering.+People+are+dying+and+dying+ecosystems+are+collapsing.+We+are+in+the+beginning+of+a+mass+extinction%2C+and+all+you+can+talk+about+is+the+money+and+fairy+tales+of+eternal+economic+growth"
@@ -197,7 +198,7 @@ You can see the supported languages (both from and to) in the Language Translato
 **Congratulations!** You just containerized a Node.js application that provides transation services.
 
 
-### Step 7 - stop the container - Clean up
+### Step 7 - Cleaning up
 
 You can first stop the container. You need the container tag or the id to stop it. Let's look it up first
 
@@ -215,15 +216,13 @@ Stop the image with the following command. You can replace the id with your cont
 docker container stop 419104eff9be
 ```
 
-### Step 8 - remove the container
-
 Run the following command to remove the container. Replace the id with your container id identified in the step above.
 
 ```bash
 docker container rm 419104eff9be
 ```
 
-### Step 9 - remove the image
+### Step 8 - Removing the image
 
 You can now delete the image. You again need the image id.
 

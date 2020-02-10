@@ -71,7 +71,7 @@ add /openapi/ui to the end of the URL
 
 Open the Open API user interface to try the REST API.
 
-![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGZZBOVOQDdQ5b-96_image)
+![](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiGZZBOVOQDdQ5b-96_image.png)
 
 ### Stretch Goal: Use your own Image
 
