@@ -88,7 +88,9 @@ Verify Access to OpenShift on the IBM Cloud
 - Open the OpenShift web console
 
 ![From a left menu icon (🍔) choose OpenShift](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Lti3mCtmtRafh0nR9de_-Lti7niQUUzz0zFGXCR7_image.png)
+
 ![Choose your pre-provisioned cluster](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Lti3mCtmtRafh0nR9de_-Lti82UvtvkHGBO1S8hX_image.png)
+
 ![Open OpenShift Web Console](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Lti3mCtmtRafh0nR9de_-Lti8EKcrm5FB-OaYbdN_image.png)
 
 ## Step 2: Get our access token for the 'oc' CLI.
@@ -96,6 +98,7 @@ Verify Access to OpenShift on the IBM Cloud
 - From the dropdown menu in the upper right of the page, click 'Copy Login Command'. Paste the copied command into your terminal.
 
 ![Copying Login Command](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Lti3mCtmtRafh0nR9de_-Lti8SzU-pNv1DiipAjZ_image.png)
+
 - Verify 'oc' CLI
 
 ```bash
