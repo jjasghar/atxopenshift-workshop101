@@ -1,57 +1,56 @@
 # Lab 1 - Using Docker Images
-This Lab will help you understand basics of Docker technology, you will build, ship, and run a container image.
 
-This workshop is an introduction to Docker, which is a runtime for containers. You will create a containerized Node.js application that provides a service to translate phrases from one language to another. The application uses the IBM Watson in IBM Language Translation service.‌
+This part of the workshop is an introduction to Docker, which is a runtime for containers. You will create a containerized Node.js application that provides a service to translate phrases from one language to another. The application uses IBM Watson in the IBM Language Translation service.‌ In doing so, you will get to build, ship, and run a container image to understand how Docker works.
 
 ## Docker
 
-For this Lab you will use Docker.
+For this Lab you will use Docker, a container runtime. As seen in this image, Docker provides an interface for containers to interact with the underlying operating system (OS).
 
-![The Docker architecture - containers are separated from the OS](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Ltht0_vGCm5brrUQOK2_-LthwLP_WM_81c65yfLd_image.png)
+![The Docker architecture: Containers are separated from the OS](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Ltht0_vGCm5brrUQOK2_-LthwLP_WM_81c65yfLd_image.png)
 
 {% hint style="info" %}
-Docker container technology separates applications from the underlying Operating System and infrastructure, which is an analog to VM technology that is separating an operating systems from the bare metal - server hardware.
+Docker's container technology separates applications from the underlying OS and infrastructure, which is somewhat analogous to virtual machine technology that separates an OS from the baremetal server hardware.
 {% endhint %}
 
-Docker technology virtualizes the Operating System (OS), and thanks to it only the application, and specific dependencies like libraries and binaries are being packaged in the image.
+Docker technology virtualizes the OS, and only the application and its specific dependencies like libraries and binaries are packaged in the image.
 
-Starting such an image is much faster omitting start of an OS. In addition the image now is very portable among various host servers running the Docker engine. And since ther is no OS, there isn't its surface for security vulnerabilities connected to it.
+Starting such an image is much faster since it omits the start of an OS. In addition, the image is more portable among various host servers running the Docker engine. And since there is no OS, there isn't as large of a surface for security vulnerabilities connected to it.
 
-## Steps
+## Lab
 
-The following steps would allow you to create the Watson translation service in the cloud. You will record the API Key to access your service later. You will create a node.js based microservice. This microservice will respond to requests with results of the translations coming from IBM Watson service. As soon as you are ready with the microservice you will be able to start Build - Ship - Run containerization process. You will build an image, and push it to a public repository - Docker Hub, and run the containerized microservice.
+To get started, you will create a Node.JS-based translation microservice using IBM Watson to respond to requests with translation results. As soon as you set up the microservice, you will build an image, push it to a public repository, and run the containerized microservice.
 
-![The Docker is about Building-Shipping-Running containers](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Ltht0_vGCm5brrUQOK2_-Lthvuq8uvz3mrYS5g_n_image.png)
+![This Docker-based part of this workshop is about building, shipping, and running containers.](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-Ltht0_vGCm5brrUQOK2_-Lthvuq8uvz3mrYS5g_n_image.png)
 
 ### Step 1 - Create a language translation service
 
-‌Open your IBM Cloud dashboard using your IBM Cloud account with this URL: https://cloud.ibm.com
+‌Open your IBM Cloud dashboard using your IBM Cloud account at [https://cloud.ibm.com](https://cloud.ibm.com). Open the **Catalog** tab.
 
-![Click on the Catalog tab.](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LthwpghMpbyDOP2ihex_-LthxWLaGzjKdFOIbJSH_image.png)
+![Select the **Catalog** tab.](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LthwpghMpbyDOP2ihex_-LthxWLaGzjKdFOIbJSH_image.png)
 
-Search translator to find the service. You can also find the service by navigating to the AI section on the left bar.
+Search for `translator` to find the service. You can also find the service by navigating to the **AI** section on the left bar.
 
 ![Search for the "Language Translator" service](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LthxikOFuFRB2luUf2R_-LthyE7dkUqWr8YzuWKh_image.png)
 
-Click on the service to create a new instance. Pick the Lite **free of charge** plan on the next page and click Create to finish creating the service.
+Select the service to create a new instance. Pick the Lite **free of charge** plan on the next page, and select **Create** to finish creating the service.
 
-![Pick free of charge Lite plan and hit Create button](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LthxikOFuFRB2luUf2R_-LthyWbVChchkF_BAAAO_image.png)
+![Pick free of charge Lite plan, and select the **Create** button](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LthxikOFuFRB2luUf2R_-LthyWbVChchkF_BAAAO_image.png)
 
 You will be redirected to the service landing page.
 
 ### Step 2 - Copy the credentials to be used later
 
-Click on Service Credentials on the left bar.
+Select **Service Credentials* on the left bar. Copy and store the API key for later.
 
-![Copy the apikey for future reference](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LthxikOFuFRB2luUf2R_-Lthypg9fN1FbyPE_G4X_image.png)
+![Copy the API key for future reference](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LthxikOFuFRB2luUf2R_-Lthypg9fN1FbyPE_G4X_image.png)
 
-If you do not see a credential provided for you, you can create a new set of credentials. Save your apikey somewhere for the next section in this workshop.
+If you do not see a credential provided for you, you can create a new set of credentials. Save your API key somewhere for the next section in this workshop.
 
-**Congratulations!** You created your first Language Translator service. The next steps will show you how to build a Docker container for a Node.js application that provides an end point to translate text!
+**Congratulations!** You created your first language translator service. The next steps will show you how to build a Docker container for a Node.JS application that provides an endpoint to translate text.
 
 ### Step 3 - Clone a demo repository
 
-Open your local terminal or the web terminal provided in the workshop and change to the /data directory.
+Open your local terminal or the web terminal provided in the workshop and change to the `/data` directory. Clone the repo from [https://github.com/lidderupk/nodejs-docker.git](https://github.com/lidderupk/nodejs-docker.git) to that directory. 
 
 ```bash
 mkdir data
@@ -61,58 +60,76 @@ git clone https://github.com/lidderupk/nodejs-docker.git
 
 ### Step 4 - Build a docker image
 
-Change into the directory you just cloned and build the docker image
+Change into the directory you just cloned and build the Docker image.
 
 ```
 cd nodejs-docker
 docker build -t <docker-username>/node-container .
 ```
 
-The `docker-username` is required if you want to publish your image to Dockerhub. Replace `<docker-username>` in the above command with your docker account name.
+The `docker-username` is required if you want to publish your image to Docker Hub. Replace `<docker-username>` in the above command with your Docker account name.
 
 {% hint style="info" %}
-If you do not have a Docker account - you would need to create one directly on hub.docker.com - choose sign up button.
+If you do not have a Docker account, you will need to create one directly on hub.docker.com by selecting the **Sign Up** button.
 {% endhint %}
 
-Alternatively, you can also build directly from github using the following command without cloning the repository:
+Alternatively, you can also build directly from GitHub using the following command without cloning the repository:
 
 ```bash
 docker build -t <docker-username>/node-container https://github.com/lidderupk/nodejs-docker.git
 ```
 
-This command uses the Dockerfile to download a Node.js 10 base image and then install our Express.js application on top. Let's explore the contents of this docker file ...
+This command uses the Dockerfile to download a Node.JS 10 base image and then install our Express.JS application on top. Let's explore the contents of this Dockerfile:
 
+```
 FROM node:10
+```
 
 ... builds our image on top of the Node.js 10 image.
 
+```
 WORKDIR /usr/src/app
+```
 
 ... creates a working directory for our application to live in.
 
+```
 COPY package*.json ./
+```
 
-... copies the package.json file to our working directory. RUN npm install ... install our dependencies. We just have two dependencies in this application: express and ibm-watson.
+... copies the package.json file to our working directory.
 
+```
+RUN npm install
+```
+
+... install our dependencies. We just have two dependencies in this application: express and ibm-watson.
+
+```
 COPY . .
+```
 
 ... copy the rest of our source code into the docker image
 
+```
 EXPOSE 8080
+```
 
 ... expose port 8080. We will still have to forward our local port to this docker container port later.
 
+```
 CMD [ "node", "server.js" ]
+```
 
 ... starts the application by running node server.js.
 
-### Step 5 - Run the docker image
+### Step 5 - Run the Docker image
 
 ```bash
 docker run -p 8080:8080 -e "nlp_key=<api_key>" -d <docker-username>/node-container
 ```
 
-In my case, I would run
+In this example case, I would run
 
 ```bash
 docker run -p 8080:8080 -e "nlp_key=T1ReDZISYE4cpqQnQHKTWe1F9iUy6hhxkRu0aWqzmxQ3" -d upkar/node-container
@@ -138,7 +155,7 @@ You should see output as follows:
 }%
 ```
 
-The text is translated to Spanish (en-sp) by default. You can specify the langauge by passing in the lang flag as follows:
+The text is translated to Spanish (en-sp) by default. You can specify the language by passing in the `lang` flag as follows:
 
 ```bash
 curl "localhost:8080/translate?text=how%20are%20you?&lang=en-de"
@@ -193,14 +210,14 @@ curl "localhost:8080/translate?text=People+are+suffering.+People+are+dying+and+d
 }
 ```
 
-You can see the supported languages (both from and to) in the Language Translator documentation.
+You can see the supported languages (both from and to) in the language translator documentation.
 
-**Congratulations!** You just containerized a Node.js application that provides transation services.
+**Congratulations!** You just containerized a Node.js application that provides translation services.
 
 
 ### Step 7 - Cleaning up
 
-You can first stop the container. You need the container tag or the id to stop it. Let's look it up first
+First, stop the container. You need the container tag or the id to stop it. Use `docker ps | grep <image-name>` to get those details.
 
 ```bash
 docker ps | grep node-container
@@ -208,30 +225,30 @@ docker ps | grep node-container
 419104eff9be        upkar/node-container                           "docker-entrypoint.s…"   3 minutes ago       Up 3 minutes                       0.0.0.0:8080->8080/tcp                            cranky_davinci
 ```
 
-In my case, the container is called cranky_davinci and has an id of 419104eff9be.
+In this example, the container is called `cranky_davinci` and has an id of `419104eff9be`.
 
-Stop the image with the following command. You can replace the id with your container id.
+Stop the image with `docker stop <container_id`. You can replace the id with your container id.
 
 ```bash
-docker container stop 419104eff9be
+docker stop 419104eff9be
 ```
 
-Run the following command to remove the container. Replace the id with your container id identified in the step above.
+Run `docker rm <container_id>` to remove the container. Replace the id with your container id identified previously.
 
 ```bash
-docker container rm 419104eff9be
+docker rm 419104eff9be
 ```
 
 ### Step 8 - Removing the image
 
-You can now delete the image. You again need the image id.
+You can now delete the image. First, get the image id using `docker images` and `grep`:
 
 ```bash
 $ docker images | grep node-container
 upkar/node-container                       latest                         8baa6ca9cdac        5 minutes ago       958MB
 ```
 
-Now, delete the image as follows.
+Now, delete the image using `docker image rm <image_id>`":
 
 ```bash
 $ docker image rm 8baa6ca9cdac
@@ -248,15 +265,11 @@ Deleted: sha256:361c46840912a7b9539b6ddf00164492fc594701085f0e2c9d2c1544bca8498c
 
 ## Troubleshooting
 
-Check container logs
+Check the container logs.
 
-You can check the logs for your container using
+You can check the logs for your container using `docker logs <container_id>`:
 
-```bash
-docker logs <container_id>
-```
-
-For example...
+For example:
 
 ```bash
 root@terminal-5-846448d675-bk75j:/data# docker logs 4450279a9f50
@@ -274,4 +287,4 @@ No language passed to translate to. Converting to Spanish by default.
 }
 ```
 
-**Congratulations** again on creating your first docker container that hosts a Natural Language Translation service!
+**Congratulations** again on creating your first Docker container that hosts a natural language translation service!
