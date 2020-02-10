@@ -356,7 +356,7 @@ After the definition of the Pod we need to define how to access the Pod. For thi
 
 In the service we map the NodePort of the cluster to the port 3000 of the Authors microservice running in the authors Pod, as we can see in the following picture.
 
-![Exposing the pod with the service](../gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiE_wmpm63DSTJBa3Q_image.png)
+![Exposing the pod with the service](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiE_wmpm63DSTJBa3Q_image.png)
 
 In the service.yaml we see a selector of the pod using the label 'app: authors'.
 
@@ -425,7 +425,9 @@ Step 3: Inspect the service in OpenShift
 - Examine the traffic and remember the simplified overview picture.
 
 ![choose your project again](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiEu7TA_LrFvnmSIHE_image.png)
+
 ![Select Applications, then Services](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiEzvwDXh0uzGC5CZ8_image.png)
+
 ![See the simplified overview picture](../.gitbook/assets/assets_-LtBxDkdPh1ZKmLAzW5v_-LtiA8xoR9evM5RpWqWE_-LtiF3V42uh8oL_8v0VJ_image.png)
 
 Congratulations! You deployed from a source code, thru container definition, your first project.
