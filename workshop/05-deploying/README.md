@@ -57,9 +57,7 @@ Move on with Verify Access to OpenShift on the IBM Cloud
 #### Option 2: Prebuilt Image with Code in Container
 
 {% hint style='info' %}
-Preferred option for Windows.
-
-This option works for Mac, Linux, or Windows.
+Preferred option for Windows. This option works for Mac, Linux, or Windows.
 {% endhint %}
 
 There is an image on DockerHub with all required tools. To get started as quickly as possible, use this image.
